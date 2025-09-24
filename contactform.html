@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>[Your Name Here] — Contact</title>
+  <meta name="description" content="Contact [Your Name]" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <div class="brand">
+        <div class="logo">SJ</div>
+        <div>[Your Name Here]</div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="resume.html">Resume</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <button id="themeToggle" class="btn">🌑</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h1>Contact</h1>
+      <p class="muted">Have a project or want to say hi? Send a message below.</p>
+
+      <div style="height:12px;"></div>
+
+      <div class="card">
+        <!--
+          NOTE: This form is static by default. To capture submissions you must:
+           - Use a form endpoint like Formspree (https://formspree.io/), Netlify Forms, or
+             configure an API Gateway + AWS Lambda + SES backend that accepts POSTs.
+           - If using Formspree, update the 'action' attribute to your Formspree URL.
+           - Alternatively, create an API Gateway endpoint and set action to that URL.
+        -->
+        <form id="contactForm" action="#" method="POST" aria-label="Contact form">
+          <div class="form-row" style="margin-bottom:12px">
+            <input class="form-control" type="text" name="name" placeholder="Your name" required>
+            <input class="form-control" type="email" name="email" placeholder="Your email" required>
+          </div>
+
+          <div style="margin-bottom:12px">
+            <input class="form-control" type="text" name="subject" placeholder="Subject" required>
+          </div>
+
+          <div style="margin-bottom:12px">
+            <textarea class="form-control" name="message" placeholder="Message" required></textarea>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:12px;">
+            <button class="btn primary" type="submit">Send Message</button>
+            <!-- status text updated by script.js -->
+            <div data-form-status style="color:var(--muted)"></div>
+          </div>
+        </form>
+      </div>
+
+      <div style="height:12px;"></div>
+
+      <p class="muted">Or email me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small class="muted">© <span id="year"></span> [Your Name Here]</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

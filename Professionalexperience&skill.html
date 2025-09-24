@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>[Your Name Here] — Resume</title>
+  <meta name="description" content="Resume and professional experience for [Your Name]" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <div class="brand">
+        <div class="logo">SJ</div>
+        <div>[Your Name Here]</div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="resume.html">Resume</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <button id="themeToggle" class="btn" title="Toggle theme">🌑</button>
+        <a class="btn primary" href="resume.pdf" download>Download PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h1>Resume</h1>
+      <div class="resume-grid">
+        <aside class="card">
+          <h3>Contact</h3>
+          <p class="muted">[your.email@example.com] • [City, State] • <a href="https://github.com/your-github">GitHub</a></p>
+
+          <div style="height:18px;"></div>
+
+          <h3>Skills</h3>
+          <div>
+            <strong>Languages</strong>
+            <p class="muted">Python, Bash, SQL, JavaScript (vanilla)</p>
+            <strong>Cloud & DevOps</strong>
+            <p class="muted">AWS (S3, CloudFront, EC2, RDS), CDK/Terraform, IAM</p>
+            <strong>Tools</strong>
+            <p class="muted">Git, GitHub, CloudWatch, CLI</p>
+          </div>
+
+        </aside>
+
+        <section>
+          <div class="card">
+            <h2>Professional Experience</h2>
+
+            <!-- Example job entry (reverse-chronological order) -->
+            <article class="job">
+              <h3>Case Planner — New York State</h3>
+              <div class="muted">2025 — Present</div>
+              <ul>
+                <li>Manage case planning workflows and documentation across stakeholders.</li>
+                <li>Improve compliance reporting and internal communication channels.</li>
+                <li>Built tooling to track requirements and deadlines (internal projects).</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h3>Director of Early Childhood Education — [Organization]</h3>
+              <div class="muted">[2018 — 2021 or 9 years depending on your history]</div>
+              <ul>
+                <li>Led multi-site compliance audits and staff training programs.</li>
+                <li>Designed documentation pipelines for licensing and safety checks.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <h3>Cloud & Security Projects (Independent)</h3>
+              <div class="muted">Ongoing</div>
+              <ul>
+                <li>Deployed S3 + CloudFront static sites with HTTPS and CI/CD.</li>
+                <li>Built VPC + ALB + EC2 + Aurora RDS prototypes with IAM guardrails.</li>
+                <li>Authored Python/Bash IAM troubleshooting scripts and runbooks.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small class="muted">© <span id="year"></span> [Your Name Here]</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
