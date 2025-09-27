@@ -37,7 +37,6 @@ Former Director of Early Childhood Education turned Cloud Engineer. This portfol
 - **Theme Toggle**: Light/dark mode switching with localStorage persistence
 - **Performance Optimized**: Vanilla JS, minimal dependencies
 - **SEO Friendly**: Semantic HTML, meta tags, structured content
-- **Accessible**: ARIA labels, keyboard navigation, proper contrast
 - **Cloud-Focused**: Highlights AWS expertise and cloud projects
 
 ## 🎨 Design Highlights
