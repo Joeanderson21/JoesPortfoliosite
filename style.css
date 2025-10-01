@@ -179,3 +179,67 @@ footer{padding:36px 0; color:var(--muted); border-top:1px solid rgba(255,255,255
 
 /* Accessibility helpers */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Grid keeps your current layout idea but tightens gaps */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px;
+  margin-block:24px 48px;
+}
+
+/* Card styling: clearer contrast, softer shadow, better spacing */
+.project-card{
+  background:#0a0f1a;               /* close to your dark theme */
+  border:1px solid #1c2640;          /* subtle border for structure */
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 22px rgba(0,0,0,.25);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(0,0,0,.32);
+  border-color:#25335c;
+}
+
+/* Square, centered diagram area */
+.project-diagram{
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#0b1220 0%, #0a0f1a 100%);
+  border-bottom:1px solid #1b2342;
+  padding:14px;
+}
+
+/* Ensure the inline SVG scales crisply within the square */
+.project-diagram svg{
+  width:88%;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.25));
+}
+
+/* Text area */
+.project-body{
+  padding:18px 18px 20px;
+}
+
+.project-body h3{
+  margin:0 0 8px;
+  font-weight:700;
+  font-size:1.1rem;
+  letter-spacing:.2px;
+  color:#e9f0ff;
+}
+
+.project-body p{
+  margin:0;
+  color:#b7c4e2;
+  line-height:1.55;
+  font-size:.98rem;
+}
+
