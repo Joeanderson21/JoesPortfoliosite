@@ -25,54 +25,38 @@
   </header>
 
   <main>
-   <section class="projects-grid">
-  <!-- CARD 1 — Networking / High Availability -->
+<section class="projects-grid">
+  <!-- CARD 1 — Networking / HA -->
   <article class="project-card">
-    <div class="project-diagram" aria-hidden="true">
-      <!-- Square, centered SVG diagram (no external assets) -->
-      <svg viewBox="0 0 600 600" role="img" aria-label="HA Web App with ALB, EC2 Auto Scaling, RDS in private subnets">
+    <div class="project-diagram">
+      <!-- Thumbnail SVG (150x150) -->
+      <svg viewBox="0 0 600 600" role="img" aria-label="HA Web App with ALB, EC2, RDS">
         <defs>
           <style>
             .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
-            .label{fill:#dce6ff;font:500 18px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .small{font:500 16px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .line{stroke:#6c7aa6;stroke-width:2;marker-end:url(#arrow)}
+            .label{fill:#dce6ff;font:500 10px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+            .small{font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+            .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow)}
           </style>
-          <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
-            <polygon points="0 0, 6 3, 0 6" fill="#6c7aa6"/>
+          <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
+            <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
           </marker>
         </defs>
 
         <!-- VPC -->
         <rect x="20" y="20" width="560" height="560" rx="16" class="box"/>
-        <text x="40" y="50" class="label">VPC (10.0.0.0/16)</text>
-
-        <!-- Public Subnets -->
-        <rect x="40" y="80" width="520" height="160" rx="12" class="box"/>
-        <text x="60" y="110" class="small">Public Subnets (AZ-a/b) • IGW</text>
-
-        <!-- Private App Subnets -->
-        <rect x="40" y="260" width="520" height="140" rx="12" class="box"/>
-        <text x="60" y="290" class="small">Private App Subnets (AZ-a/b) • NAT Gateways</text>
-
-        <!-- Private DB Subnets -->
-        <rect x="40" y="420" width="520" height="140" rx="12" class="box"/>
-        <text x="60" y="450" class="small">Private DB Subnets (AZ-a/b)</text>
-
+        <text x="40" y="50" class="label">VPC</text>
         <!-- ALB -->
         <rect x="420" y="120" width="120" height="60" rx="10" class="box"/>
         <text x="480" y="155" text-anchor="middle" class="small">ALB</text>
-
         <!-- EC2 ASG -->
         <rect x="140" y="310" width="120" height="60" rx="10" class="box"/>
-        <text x="200" y="345" text-anchor="middle" class="small">EC2 (ASG)</text>
         <rect x="280" y="310" width="120" height="60" rx="10" class="box"/>
-        <text x="340" y="345" text-anchor="middle" class="small">EC2 (ASG)</text>
-
+        <text x="200" y="345" text-anchor="middle" class="small">EC2 ASG</text>
+        <text x="340" y="345" text-anchor="middle" class="small">EC2 ASG</text>
         <!-- RDS -->
         <rect x="240" y="490" width="120" height="50" rx="10" class="box"/>
-        <text x="300" y="522" text-anchor="middle" class="small">RDS (Multi-AZ)</text>
-
+        <text x="300" y="522" text-anchor="middle" class="small">RDS</text>
         <!-- Lines -->
         <line x1="480" y1="180" x2="200" y2="310" class="line"/>
         <line x1="480" y1="180" x2="340" y2="310" class="line"/>
@@ -80,127 +64,89 @@
         <line x1="340" y1="370" x2="300" y2="490" class="line"/>
       </svg>
     </div>
-
     <div class="project-body">
-      <h3>Highly-Available Web App: ALB + EC2 Auto Scaling + RDS</h3>
+      <h3>HA Web App: ALB + EC2 + RDS</h3>
       <p>
-        Built a production-style VPC with public/private subnets, Internet/NAT gateways, and security groups.
-        Deployed an Application Load Balancer with health checks, Auto Scaling EC2 behind target groups, and a Multi-AZ RDS database.
-        Implemented least-privilege IAM and CloudWatch logging/alarms. Provisioned via IaC (CDK/CloudFormation).
+        Built a production VPC with public/private subnets, ALB, Auto Scaling EC2 instances, and Multi-AZ RDS.
+        Configured least-privilege IAM, security groups, and CloudWatch alarms. Provisioned via CDK/CloudFormation.
       </p>
     </div>
   </article>
 
-  <!-- CARD 2 — Serverless / Automation -->
+  <!-- CARD 2 — Serverless -->
   <article class="project-card">
-    <div class="project-diagram" aria-hidden="true">
-      <svg viewBox="0 0 600 600" role="img" aria-label="Serverless API with API Gateway, Lambda, DynamoDB and S3 static hosting">
+    <div class="project-diagram">
+      <svg viewBox="0 0 600 600" role="img" aria-label="Serverless API with Lambda, API Gateway, DynamoDB, S3">
         <defs>
           <style>
             .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
-            .label{fill:#dce6ff;font:500 18px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .small{font:500 16px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .line{stroke:#6c7aa6;stroke-width:2;marker-end:url(#arrow2)}
+            .small{fill:#dce6ff;font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+            .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow2)}
           </style>
-          <marker id="arrow2" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
-            <polygon points="0 0, 6 3, 0 6" fill="#6c7aa6"/>
+          <marker id="arrow2" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
+            <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
           </marker>
         </defs>
 
-        <!-- Edge -->
-        <rect x="40" y="40" width="520" height="520" rx="16" class="box"/>
-        <text x="60" y="70" class="label">Serverless API</text>
-
-        <!-- S3 + CloudFront -->
         <rect x="70" y="110" width="160" height="70" rx="10" class="box"/>
         <text x="150" y="150" text-anchor="middle" class="small">S3 + CloudFront</text>
-
-        <!-- API GW -->
         <rect x="250" y="200" width="120" height="60" rx="10" class="box"/>
         <text x="310" y="235" text-anchor="middle" class="small">API Gateway</text>
-
-        <!-- Lambda -->
         <rect x="250" y="300" width="120" height="60" rx="10" class="box"/>
         <text x="310" y="335" text-anchor="middle" class="small">Lambda</text>
-
-        <!-- DynamoDB -->
         <rect x="250" y="400" width="120" height="60" rx="10" class="box"/>
         <text x="310" y="435" text-anchor="middle" class="small">DynamoDB</text>
-
-        <!-- EventBridge -->
-        <rect x="420" y="300" width="120" height="60" rx="10" class="box"/>
-        <text x="480" y="335" text-anchor="middle" class="small">EventBridge</text>
-
-        <!-- Arrows -->
         <line x1="150" y1="180" x2="250" y2="230" class="line"/>
         <line x1="310" y1="260" x2="310" y2="300" class="line"/>
         <line x1="310" y1="360" x2="310" y2="400" class="line"/>
-        <line x1="370" y1="330" x2="420" y2="330" class="line"/>
       </svg>
     </div>
-
     <div class="project-body">
-      <h3>Serverless REST API: API Gateway → Lambda → DynamoDB</h3>
+      <h3>Serverless REST API</h3>
       <p>
-        Implemented a fully serverless backend with API Gateway routes invoking Lambda functions and persisting to DynamoDB.
-        Configured IAM least-privilege roles, environment variables, throttling, and CORS.
-        Fronted by S3 + CloudFront for a static UI. Added CI/CD and CloudWatch Logs for traceability.
+        Implemented API Gateway routing to Lambda functions with DynamoDB backend.
+        Fronted by S3 + CloudFront and configured IAM roles, throttling, CORS, and CloudWatch logging.
       </p>
     </div>
   </article>
 
   <!-- CARD 3 — Monitoring / Ops -->
   <article class="project-card">
-    <div class="project-diagram" aria-hidden="true">
-      <svg viewBox="0 0 600 600" role="img" aria-label="CloudWatch monitoring with alarms, dashboards, SNS notifications and SSM automation">
+    <div class="project-diagram">
+      <svg viewBox="0 0 600 600" role="img" aria-label="Monitoring with CloudWatch, SNS, SSM">
         <defs>
           <style>
             .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
-            .small{fill:#dce6ff;font:500 16px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .line{stroke:#6c7aa6;stroke-width:2;marker-end:url(#arrow3)}
+            .small{fill:#dce6ff;font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+            .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow3)}
           </style>
-          <marker id="arrow3" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
-            <polygon points="0 0, 6 3, 0 6" fill="#6c7aa6"/>
+          <marker id="arrow3" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
+            <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
           </marker>
         </defs>
 
-        <!-- CloudWatch -->
         <rect x="70" y="80" width="180" height="70" rx="10" class="box"/>
         <text x="160" y="122" text-anchor="middle" class="small">CloudWatch Metrics</text>
-
-        <!-- Alarms -->
         <rect x="70" y="190" width="180" height="60" rx="10" class="box"/>
-        <text x="160" y="225" text-anchor="middle" class="small">Alarms (CPU, 5XX, RDS)</text>
-
-        <!-- SNS -->
+        <text x="160" y="225" text-anchor="middle" class="small">Alarms</text>
         <rect x="350" y="190" width="180" height="60" rx="10" class="box"/>
-        <text x="440" y="225" text-anchor="middle" class="small">SNS Notifications</text>
-
-        <!-- Dashboard -->
+        <text x="440" y="225" text-anchor="middle" class="small">SNS</text>
         <rect x="350" y="80" width="180" height="70" rx="10" class="box"/>
         <text x="440" y="122" text-anchor="middle" class="small">Dashboards</text>
-
-        <!-- SSM -->
-        <rect x="210" y="360" width="180" height="60" rx="10" class="box"/>
-        <text x="300" y="395" text-anchor="middle" class="small">SSM Automation (Runbook)</text>
-
-        <!-- Arrows -->
         <line x1="250" y1="115" x2="350" y2="115" class="line"/>
         <line x1="250" y1="220" x2="350" y2="220" class="line"/>
-        <line x1="160" y1="250" x2="300" y2="360" class="line"/>
       </svg>
     </div>
-
     <div class="project-body">
-      <h3>Monitoring & Ops: CloudWatch Alarms → SNS → SSM Automation</h3>
+      <h3>Monitoring & Ops</h3>
       <p>
-        Built proactive monitoring with CloudWatch metrics, dashboards, and alarm thresholds on EC2 CPU, ALB 5XX, and RDS storage.
-        Routed alerts to SNS for email/on-call and triggered SSM Automation runbooks for guided remediation.
-        Added log metric filters and tested alarm → notify → action flows.
+        Built CloudWatch dashboards, alarms, and SNS notifications.
+        Connected alarms to SSM automation for guided remediation and added log metric filters for proactive monitoring.
       </p>
     </div>
   </article>
 </section>
+
         </article>
       </div>
 
@@ -227,6 +173,7 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
 
