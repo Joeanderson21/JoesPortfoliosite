@@ -25,142 +25,142 @@
   </header>
 
   <main>
-<section class="projects-grid">
-  <!-- CARD 1 — Networking / HA -->
-  <article class="project-card">
-    <div class="project-diagram">
-      <!-- Thumbnail SVG (150x150) -->
-      <svg viewBox="0 0 600 600" role="img" aria-label="HA Web App with ALB, EC2, RDS">
-        <defs>
-          <style>
-            .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
-            .label{fill:#dce6ff;font:500 10px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .small{font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow)}
-          </style>
-          <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
-            <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
-          </marker>
-        </defs>
+    <div class="container">
+      <section>
+        <h1>My Projects</h1>
+        <p class="muted">A showcase of AWS cloud architecture projects</p>
 
-        <!-- VPC -->
-        <rect x="20" y="20" width="560" height="560" rx="16" class="box"/>
-        <text x="40" y="50" class="label">VPC</text>
-        <!-- ALB -->
-        <rect x="420" y="120" width="120" height="60" rx="10" class="box"/>
-        <text x="480" y="155" text-anchor="middle" class="small">ALB</text>
-        <!-- EC2 ASG -->
-        <rect x="140" y="310" width="120" height="60" rx="10" class="box"/>
-        <rect x="280" y="310" width="120" height="60" rx="10" class="box"/>
-        <text x="200" y="345" text-anchor="middle" class="small">EC2 ASG</text>
-        <text x="340" y="345" text-anchor="middle" class="small">EC2 ASG</text>
-        <!-- RDS -->
-        <rect x="240" y="490" width="120" height="50" rx="10" class="box"/>
-        <text x="300" y="522" text-anchor="middle" class="small">RDS</text>
-        <!-- Lines -->
-        <line x1="480" y1="180" x2="200" y2="310" class="line"/>
-        <line x1="480" y1="180" x2="340" y2="310" class="line"/>
-        <line x1="260" y1="370" x2="300" y2="490" class="line"/>
-        <line x1="340" y1="370" x2="300" y2="490" class="line"/>
-      </svg>
-    </div>
-    <div class="project-body">
-      <h3>HA Web App: ALB + EC2 + RDS</h3>
-      <p>
-        Built a production VPC with public/private subnets, ALB, Auto Scaling EC2 instances, and Multi-AZ RDS.
-        Configured least-privilege IAM, security groups, and CloudWatch alarms. Provisioned via CDK/CloudFormation.
-      </p>
-    </div>
-  </article>
+        <div class="projects-grid">
+          <!-- CARD 1 — Networking / HA -->
+          <article class="project-card">
+            <div class="project-diagram">
+              <svg viewBox="0 0 600 600" role="img" aria-label="HA Web App with ALB, EC2, RDS">
+                <defs>
+                  <style>
+                    .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
+                    .label{fill:#dce6ff;font:500 10px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+                    .small{font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+                    .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow)}
+                  </style>
+                  <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
+                    <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
+                  </marker>
+                </defs>
 
-  <!-- CARD 2 — Serverless -->
-  <article class="project-card">
-    <div class="project-diagram">
-      <svg viewBox="0 0 600 600" role="img" aria-label="Serverless API with Lambda, API Gateway, DynamoDB, S3">
-        <defs>
-          <style>
-            .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
-            .small{fill:#dce6ff;font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow2)}
-          </style>
-          <marker id="arrow2" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
-            <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
-          </marker>
-        </defs>
+                <!-- VPC -->
+                <rect x="20" y="20" width="560" height="560" rx="16" class="box"/>
+                <text x="40" y="50" class="label">VPC</text>
+                <!-- ALB -->
+                <rect x="420" y="120" width="120" height="60" rx="10" class="box"/>
+                <text x="480" y="155" text-anchor="middle" class="small">ALB</text>
+                <!-- EC2 ASG -->
+                <rect x="140" y="310" width="120" height="60" rx="10" class="box"/>
+                <rect x="280" y="310" width="120" height="60" rx="10" class="box"/>
+                <text x="200" y="345" text-anchor="middle" class="small">EC2 ASG</text>
+                <text x="340" y="345" text-anchor="middle" class="small">EC2 ASG</text>
+                <!-- RDS -->
+                <rect x="240" y="490" width="120" height="50" rx="10" class="box"/>
+                <text x="300" y="522" text-anchor="middle" class="small">RDS</text>
+                <!-- Lines -->
+                <line x1="480" y1="180" x2="200" y2="310" class="line"/>
+                <line x1="480" y1="180" x2="340" y2="310" class="line"/>
+                <line x1="260" y1="370" x2="300" y2="490" class="line"/>
+                <line x1="340" y1="370" x2="300" y2="490" class="line"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <h3>HA Web App: ALB + EC2 + RDS</h3>
+              <p>
+                Built a production VPC with public/private subnets, ALB, Auto Scaling EC2 instances, and Multi-AZ RDS.
+                Configured least-privilege IAM, security groups, and CloudWatch alarms. Provisioned via CDK/CloudFormation.
+              </p>
+            </div>
+          </article>
 
-        <rect x="70" y="110" width="160" height="70" rx="10" class="box"/>
-        <text x="150" y="150" text-anchor="middle" class="small">S3 + CloudFront</text>
-        <rect x="250" y="200" width="120" height="60" rx="10" class="box"/>
-        <text x="310" y="235" text-anchor="middle" class="small">API Gateway</text>
-        <rect x="250" y="300" width="120" height="60" rx="10" class="box"/>
-        <text x="310" y="335" text-anchor="middle" class="small">Lambda</text>
-        <rect x="250" y="400" width="120" height="60" rx="10" class="box"/>
-        <text x="310" y="435" text-anchor="middle" class="small">DynamoDB</text>
-        <line x1="150" y1="180" x2="250" y2="230" class="line"/>
-        <line x1="310" y1="260" x2="310" y2="300" class="line"/>
-        <line x1="310" y1="360" x2="310" y2="400" class="line"/>
-      </svg>
-    </div>
-    <div class="project-body">
-      <h3>Serverless REST API</h3>
-      <p>
-        Implemented API Gateway routing to Lambda functions with DynamoDB backend.
-        Fronted by S3 + CloudFront and configured IAM roles, throttling, CORS, and CloudWatch logging.
-      </p>
-    </div>
-  </article>
+          <!-- CARD 2 — Serverless -->
+          <article class="project-card">
+            <div class="project-diagram">
+              <svg viewBox="0 0 600 600" role="img" aria-label="Serverless API with Lambda, API Gateway, DynamoDB, S3">
+                <defs>
+                  <style>
+                    .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
+                    .small{fill:#dce6ff;font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+                    .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow2)}
+                  </style>
+                  <marker id="arrow2" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
+                    <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
+                  </marker>
+                </defs>
 
-  <!-- CARD 3 — Monitoring / Ops -->
-  <article class="project-card">
-    <div class="project-diagram">
-      <svg viewBox="0 0 600 600" role="img" aria-label="Monitoring with CloudWatch, SNS, SSM">
-        <defs>
-          <style>
-            .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
-            .small{fill:#dce6ff;font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
-            .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow3)}
-          </style>
-          <marker id="arrow3" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
-            <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
-          </marker>
-        </defs>
+                <rect x="70" y="110" width="160" height="70" rx="10" class="box"/>
+                <text x="150" y="150" text-anchor="middle" class="small">S3 + CloudFront</text>
+                <rect x="250" y="200" width="120" height="60" rx="10" class="box"/>
+                <text x="310" y="235" text-anchor="middle" class="small">API Gateway</text>
+                <rect x="250" y="300" width="120" height="60" rx="10" class="box"/>
+                <text x="310" y="335" text-anchor="middle" class="small">Lambda</text>
+                <rect x="250" y="400" width="120" height="60" rx="10" class="box"/>
+                <text x="310" y="435" text-anchor="middle" class="small">DynamoDB</text>
+                <line x1="150" y1="180" x2="250" y2="230" class="line"/>
+                <line x1="310" y1="260" x2="310" y2="300" class="line"/>
+                <line x1="310" y1="360" x2="310" y2="400" class="line"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <h3>Serverless REST API</h3>
+              <p>
+                Implemented API Gateway routing to Lambda functions with DynamoDB backend.
+                Fronted by S3 + CloudFront and configured IAM roles, throttling, CORS, and CloudWatch logging.
+              </p>
+            </div>
+          </article>
 
-        <rect x="70" y="80" width="180" height="70" rx="10" class="box"/>
-        <text x="160" y="122" text-anchor="middle" class="small">CloudWatch Metrics</text>
-        <rect x="70" y="190" width="180" height="60" rx="10" class="box"/>
-        <text x="160" y="225" text-anchor="middle" class="small">Alarms</text>
-        <rect x="350" y="190" width="180" height="60" rx="10" class="box"/>
-        <text x="440" y="225" text-anchor="middle" class="small">SNS</text>
-        <rect x="350" y="80" width="180" height="70" rx="10" class="box"/>
-        <text x="440" y="122" text-anchor="middle" class="small">Dashboards</text>
-        <line x1="250" y1="115" x2="350" y2="115" class="line"/>
-        <line x1="250" y1="220" x2="350" y2="220" class="line"/>
-      </svg>
-    </div>
-    <div class="project-body">
-      <h3>Monitoring & Ops</h3>
-      <p>
-        Built CloudWatch dashboards, alarms, and SNS notifications.
-        Connected alarms to SSM automation for guided remediation and added log metric filters for proactive monitoring.
-      </p>
-    </div>
-  </article>
-</section>
+          <!-- CARD 3 — Monitoring / Ops -->
+          <article class="project-card">
+            <div class="project-diagram">
+              <svg viewBox="0 0 600 600" role="img" aria-label="Monitoring with CloudWatch, SNS, SSM">
+                <defs>
+                  <style>
+                    .box{fill:#0b1220;stroke:#2a3550;stroke-width:2}
+                    .small{fill:#dce6ff;font:500 8px/1.2 ui-sans-serif,system-ui,Segoe UI,Roboto}
+                    .line{stroke:#6c7aa6;stroke-width:1;marker-end:url(#arrow3)}
+                  </style>
+                  <marker id="arrow3" markerWidth="6" markerHeight="6" refX="3" refY="1.5" orient="auto">
+                    <polygon points="0 0, 3 1.5, 0 3" fill="#6c7aa6"/>
+                  </marker>
+                </defs>
 
-        </article>
-      </div>
-
-      <div style="height:20px;"></div>
-
-      <!-- linkedin button placeholder: replace href with your Linkdin profile URL -->
-      <section class="card">
-        <h2>Links to other pages</h2>
-        <p class="muted">Click to view badges</p>
-        <div style="height:12px;"></div>
-        <a class="btn primary" href=https://www.linkedin.com/in/joseph-john-anderson-252a8523/" target="_blank" rel="noopener">View My Linkedin Profile</a>
-        <a class="btn primary" href=https://skillsprofile.skillbuilder.aws/user/JJanderson21/cloudquest" target="_blank" rel="noopener">View My AWS Skills Profile</a>
+                <rect x="70" y="80" width="180" height="70" rx="10" class="box"/>
+                <text x="160" y="122" text-anchor="middle" class="small">CloudWatch Metrics</text>
+                <rect x="70" y="190" width="180" height="60" rx="10" class="box"/>
+                <text x="160" y="225" text-anchor="middle" class="small">Alarms</text>
+                <rect x="350" y="190" width="180" height="60" rx="10" class="box"/>
+                <text x="440" y="225" text-anchor="middle" class="small">SNS</text>
+                <rect x="350" y="80" width="180" height="70" rx="10" class="box"/>
+                <text x="440" y="122" text-anchor="middle" class="small">Dashboards</text>
+                <line x1="250" y1="115" x2="350" y2="115" class="line"/>
+                <line x1="250" y1="220" x2="350" y2="220" class="line"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <h3>Monitoring & Ops</h3>
+              <p>
+                Built CloudWatch dashboards, alarms, and SNS notifications.
+                Connected alarms to SSM automation for guided remediation and added log metric filters for proactive monitoring.
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
-    </section>
+
+      <section class="card" style="margin-top: 48px;">
+        <h2>Professional Links</h2>
+        <p class="muted">Connect with me and view my credentials</p>
+        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn primary" href="https://www.linkedin.com/in/joseph-john-anderson-252a8523/" target="_blank" rel="noopener">View My LinkedIn Profile</a>
+          <a class="btn primary" href="https://skillsprofile.skillbuilder.aws/user/JJanderson21/cloudquest" target="_blank" rel="noopener">View My AWS Skills Profile</a>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>
@@ -173,10 +173,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-
-
-
-
-
-
