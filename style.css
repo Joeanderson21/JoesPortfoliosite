@@ -1,271 +1,369 @@
-/* style.css
-   Central stylesheet for all pages
-   - Uses CSS variables for colors (so the toggle can swap themes)
-   - Responsive layout, simple utility classes and readable typography
-*/
+/* ============================================
+   PORTFOLIO STYLESHEET
+   Organized, clean, and maintainable CSS
+   ============================================ */
 
-/* Root (dark theme) variables — default is dark */
-:root{
+/* -------------------- CSS VARIABLES -------------------- */
+:root {
+  /* Colors - Dark Theme (Default) */
   --bg: #0b1220;
   --panel: #0f172a;
   --text: #e6eef8;
   --muted: #94a3b8;
   --accent: #0ea5e9;
   --accent-2: #22d3ee;
+  
+  /* Spacing & Layout */
   --radius: 12px;
-  --shadow: 0 8px 24px rgba(2,6,23,.45);
+  --shadow: 0 8px 24px rgba(2, 6, 23, 0.45);
   --max-width: 1100px;
   --container-padding: 20px;
   --nav-height: 64px;
+  
+  /* Typography */
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* Light theme overrides — toggled by adding .light to <body> */
-body.light{
+/* Light Theme Overrides */
+body.light {
   --bg: #f8fafc;
   --panel: #ffffff;
   --text: #0b1220;
   --muted: #475569;
   --accent: #0369a1;
   --accent-2: #0891b2;
-  --shadow: 0 10px 30px rgba(2,6,23,.08);
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
 }
 
-/* Page basics */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
+
+/* -------------------- BASE STYLES -------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
   font-family: var(--font-sans);
-  background:
-    radial-gradient(800px 600px at 10% -10%, rgba(14,165,233,.06), transparent),
+  background: 
+    radial-gradient(800px 600px at 10% -10%, rgba(14, 165, 233, 0.06), transparent),
     var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container */
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
+
+/* -------------------- LAYOUT -------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 28px var(--container-padding);
 }
 
-/* Header / Nav */
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:60;
-  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+
+/* -------------------- NAVIGATION -------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,.02);
-}
-.navbar{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  height:var(--nav-height);
-  justify-content:space-between;
-}
-.brand{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  font-weight:700;
-}
-.brand .logo{
-  width:40px; height:40px; border-radius:8px; display:grid; place-items:center;
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
-  border: 1px solid rgba(255,255,255,.04);
-  font-size:18px;
-}
-.nav-links{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-a.nav-link{
-  text-decoration:none;
-  color:var(--text);
-  padding:8px 12px;
-  border-radius:8px;
-  font-weight:600;
-  font-size:14px;
-}
-a.nav-link:hover{ background: rgba(255,255,255,.02) }
-
-/* Nav utilities */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.04);
-  background:transparent;
-  cursor:pointer;
-  color:var(--text);
-  font-weight:600;
-}
-.btn.primary{
-  background: linear-gradient(180deg, var(--accent), color-mix(in oklab,var(--accent),black 10%));
-  color:white;
-  border:none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-/* Hero / Home */
-.hero{
-  display:grid;
+.navbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: var(--nav-height);
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 700;
+}
+
+.brand .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+a.nav-link:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+
+/* -------------------- BUTTONS -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent), black 10%));
+  color: white;
+  border: none;
+}
+
+
+/* -------------------- HERO SECTION -------------------- */
+.hero {
+  display: grid;
   grid-template-columns: 1fr 420px;
-  gap:32px;
-  align-items:center;
-  padding:36px 0;
-}
-@media (max-width:920px){
-  .hero{ grid-template-columns: 1fr; }
+  gap: 32px;
+  align-items: center;
+  padding: 36px 0;
 }
 
-/* Card */
-.card{
-  background: linear-gradient(180deg, color-mix(in oklab,var(--panel), white 2%), var(--panel));
+@media (max-width: 920px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* -------------------- CARDS -------------------- */
+.card {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--panel), white 2%), var(--panel));
   border-radius: var(--radius);
-  padding:18px;
+  padding: 18px;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(255,255,255,.02);
+  border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-/* Headings and text */
-h1,h2,h3{margin:0 0 12px 0}
-h1{font-size:clamp(26px, 3.8vw, 40px)}
-h2{font-size:20px}
-p.muted{color:var(--muted); margin:0}
 
-/* Grid utilities */
-.grid{display:grid; gap:18px}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-@media (max-width:920px){
-  .grid-3, .grid-2{grid-template-columns:1fr}
+/* -------------------- TYPOGRAPHY -------------------- */
+h1, h2, h3 {
+  margin: 0 0 12px 0;
 }
 
-/* Projects */
-.project-thumb{
-  width:100%; height:160px; border-radius:10px; overflow:hidden;
-  display:grid; place-items:center;
-  background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,0));
-  border: 1px solid rgba(255,255,255,.03);
+h1 {
+  font-size: clamp(26px, 3.8vw, 40px);
 }
 
-/* Resume layout */
-.resume-grid{ display:grid; grid-template-columns: 1fr 2fr; gap:18px }
-@media (max-width:920px){ .resume-grid{ grid-template-columns:1fr } }
-.job{ padding:12px; border-radius:10px; background:rgba(255,255,255,.01); }
-
-/* Contact form */
-.form-row{display:flex; gap:12px}
-.form-control{width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,.04); background:transparent; color:var(--text)}
-textarea.form-control{min-height:140px; resize:vertical}
-
-/* Footer */
-footer{padding:36px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.02)}
-
-/* Small utilities */
-.kv{font-weight:700}
-.chips{display:flex; gap:8px; flex-wrap:wrap}
-.chip{padding:6px 8px; border-radius:999px; font-size:13px; background: rgba(255,255,255,.02);}
-
-/* Accessibility helpers */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* Grid keeps your current layout idea but tightens gaps */
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:22px;
-  margin-block:24px 48px;
+h2 {
+  font-size: 20px;
 }
 
-/* Card styling: clearer contrast, softer shadow, better spacing */
-.project-card{
-  background:#0a0f1a;               /* close to your dark theme */
-  border:1px solid #1c2640;          /* subtle border for structure */
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 6px 22px rgba(0,0,0,.25);
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+p.muted {
+  color: var(--muted);
+  margin: 0;
 }
 
-.project-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 28px rgba(0,0,0,.32);
-  border-color:#25335c;
+
+/* -------------------- GRID UTILITIES -------------------- */
+.grid {
+  display: grid;
+  gap: 18px;
 }
 
-/* Square, centered diagram area */
-.project-diagram{
-  aspect-ratio:1/1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(180deg,#0b1220 0%, #0a0f1a 100%);
-  border-bottom:1px solid #1b2342;
-  padding:14px;
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
-/* Ensure the inline SVG scales crisply within the square */
-.project-diagram svg{
-  width:88%;
-  height:auto;
-  display:block;
-  filter:drop-shadow(0 2px 4px rgba(0,0,0,.25));
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-/* Text area */
-.project-body{
-  padding:18px 18px 20px;
+@media (max-width: 920px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
 }
 
-.project-body h3{
-  margin:0 0 8px;
-  font-weight:700;
-  font-size:1.1rem;
-  letter-spacing:.2px;
-  color:#e9f0ff;
+
+/* -------------------- PROJECTS SECTION -------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin: 24px 0 48px;
 }
 
-.project-body p{
-  margin:0;
-  color:#b7c4e2;
-  line-height:1.55;
-  font-size:.98rem;
-}
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
-  margin-block:24px 48px;
+.project-card {
+  background: #0a0f1a;
+  border: 1px solid #1c2640;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.project-card{
-  background:#0a0f1a;
-  border:1px solid #1c2640;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 4px 14px rgba(0,0,0,.2);
-  transition:transform .2s ease, box-shadow .2s ease;
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+  border-color: #25335c;
 }
 
-.project-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(0,0,0,.28);
+.project-diagram {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #0b1220 0%, #0a0f1a 100%);
+  border-bottom: 1px solid #1b2342;
+  padding: 14px;
 }
 
-.project-diagram{
-  width:100%;
-  max-width:150px; /* thumbnail size */
-  aspect-ratio:1
+.project-diagram svg {
+  width: 88%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
 
+.project-body {
+  padding: 18px 18px 20px;
+}
+
+.project-body h3 {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
+  color: #e9f0ff;
+}
+
+.project-body p {
+  margin: 0;
+  color: #b7c4e2;
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+/* Alternative: Thumbnail Style Projects (if needed) */
+.project-thumb {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+
+/* -------------------- RESUME PAGE -------------------- */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 18px;
+}
+
+@media (max-width: 920px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.job {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+
+/* -------------------- CONTACT FORM -------------------- */
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+}
+
+textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
+}
+
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  padding: 36px 0;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+
+/* -------------------- UTILITY CLASSES -------------------- */
+.kv {
+  font-weight: 700;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+
+/* -------------------- ACCESSIBILITY -------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
