@@ -4,31 +4,37 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Joe Anderson — Portfolio</title>
-  <meta name="description" content="Portfolio of projects" />
+  <meta name="description" content="Hands-on AWS projects by Joe Anderson: a highly available web app, serverless authentication and VPC Flow Logs analysis." />
+  <meta property="og:title" content="Joe Anderson — Portfolio" />
+  <meta property="og:description" content="Hands-on AWS projects by Joe Anderson: a highly available web app, serverless authentication and VPC Flow Logs analysis." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1220'/%3E%3Ctext x='32' y='42' font-size='28' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2322d3ee'%3EJJA%3C/text%3E%3C/svg%3E">
+  <script>try{var t=localStorage.getItem("site_theme");if(t?t==="light":matchMedia("(prefers-color-scheme: light)").matches)document.documentElement.classList.add("light")}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container navbar">
-      <div class="brand">
-        <div class="logo">JA</div>
-        <div>Joe Anderson</div>
-      </div>
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true">JJA</span>
+        <span>Joe Anderson<small class="muted brand-sub">Cloud • Security • Engineering</small></span>
+      </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="resume.html">Resume</a>
-        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="portfolio.html" aria-current="page">Portfolio</a>
         <a class="nav-link" href="contact.html">Contact</a>
-        <button id="themeToggle" class="btn">🌑</button>
+        <button id="themeToggle" type="button" class="btn" aria-label="Switch to light theme" aria-pressed="false">🌑</button>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="container">
       <section>
         <h1>Featured AWS Projects</h1>
-        <p class="muted">Real-world cloud architecture implementations from AWS Cloud Quest certification</p>
+        <p class="muted">Hands-on cloud architectures I built in AWS Cloud Quest labs</p>
 
         <div class="projects-grid">
           <!-- PROJECT 1: Highly Available Web Application -->
@@ -298,10 +304,10 @@
         </div>
       </section>
 
-      <section class="card" style="margin-top: 48px;">
-        <h2>Professional Links</h2>
-        <p class="muted">Connect with me and view my AWS credentials</p>
-        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+      <section class="card section-gap">
+        <h2>Professional links</h2>
+        <p class="muted">Connect with me and see my AWS credentials</p>
+        <div class="btn-row">
           <a class="btn primary" href="https://www.linkedin.com/in/joseph-john-anderson-252a8523/" target="_blank" rel="noopener">LinkedIn Profile</a>
           <a class="btn primary" href="https://skillsprofile.skillbuilder.aws/user/Joeanderson/cloudquest" target="_blank" rel="noopener">AWS Skills Profile</a>
         </div>

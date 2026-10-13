@@ -9,9 +9,16 @@
   --bg: #0b1220;
   --panel: #0f172a;
   --text: #e6eef8;
-  --muted: #94a3b8;
+  --muted: #a3b2c7;
   --accent: #0ea5e9;
   --accent-2: #22d3ee;
+  --card-bg: #0a0f1a;
+  --card-border: #1c2640;
+  --card-border-hover: #25335c;
+  --card-head: #e9f0ff;
+  --card-text: #b7c4e2;
+  --diagram-bg: linear-gradient(180deg, #0b1220 0%, #0a0f1a 100%);
+  --line: rgba(255, 255, 255, 0.08);
   
   /* Spacing & Layout */
   --radius: 12px;
@@ -25,11 +32,18 @@
 }
 
 /* Light Theme Overrides */
-body.light {
+html.light, body.light {
   --bg: #f8fafc;
   --panel: #ffffff;
   --text: #0b1220;
   --muted: #475569;
+  --card-bg: #ffffff;
+  --card-border: #d6deea;
+  --card-border-hover: #94a3b8;
+  --card-head: #0b1220;
+  --card-text: #334155;
+  --diagram-bg: linear-gradient(180deg, #0b1220 0%, #0a0f1a 100%);
+  --line: rgba(15, 23, 42, 0.12);
   --accent: #0369a1;
   --accent-2: #0891b2;
   --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
@@ -73,15 +87,20 @@ body {
   z-index: 60;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--line);
 }
 
 .navbar {
   display: flex;
   gap: 12px;
   align-items: center;
-  height: var(--nav-height);
+  min-height: var(--nav-height);
   justify-content: space-between;
+}
+
+a.brand {
+  color: inherit;
+  text-decoration: none;
 }
 
 .brand {
@@ -104,7 +123,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -120,7 +139,12 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--line);
+}
+
+a.nav-link[aria-current="page"] {
+  background: var(--line);
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 
@@ -128,10 +152,13 @@ a.nav-link:hover {
 .btn {
   display: inline-flex;
   align-items: center;
+  min-height: 40px;
+  font-family: inherit;
+  font-size: 14px;
   gap: 8px;
   padding: 8px 12px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
   background: transparent;
   cursor: pointer;
   color: var(--text);
@@ -141,8 +168,18 @@ a.nav-link:hover {
 
 .btn.primary {
   background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent), black 10%));
-  color: white;
+  color: #04121f;
   border: none;
+  text-decoration: none;
+}
+
+html.light .btn.primary,
+body.light .btn.primary {
+  color: #ffffff;
+}
+
+a.btn {
+  text-decoration: none;
 }
 
 
@@ -222,8 +259,8 @@ p.muted {
 }
 
 .project-card {
-  background: #0a0f1a;
-  border: 1px solid #1c2640;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
@@ -233,7 +270,7 @@ p.muted {
 .project-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
-  border-color: #25335c;
+  border-color: var(--card-border-hover);
 }
 
 .project-diagram {
@@ -241,8 +278,8 @@ p.muted {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #0b1220 0%, #0a0f1a 100%);
-  border-bottom: 1px solid #1b2342;
+  background: var(--diagram-bg);
+  border-bottom: 1px solid var(--card-border);
   padding: 14px;
 }
 
@@ -262,12 +299,12 @@ p.muted {
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.2px;
-  color: #e9f0ff;
+  color: var(--card-head);
 }
 
 .project-body p {
   margin: 0;
-  color: #b7c4e2;
+  color: var(--card-text);
   line-height: 1.55;
   font-size: 0.98rem;
 }
@@ -315,7 +352,7 @@ p.muted {
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
   background: transparent;
   color: var(--text);
   font-family: inherit;
@@ -331,7 +368,7 @@ textarea.form-control {
 footer {
   padding: 36px 0;
   color: var(--muted);
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--line);
 }
 
 
@@ -367,3 +404,86 @@ footer {
   border: 0;
 }
 
+
+/* -------------------- SPACING HELPERS -------------------- */
+.spacer { height: 18px; }
+.spacer-sm { height: 12px; }
+.section-gap { margin-top: 48px; }
+
+.btn-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.brand-sub {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.summary {
+  max-width: 70ch;
+  margin-bottom: 18px;
+}
+
+.field { margin-bottom: 12px; }
+.form-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.form-status { color: var(--muted); }
+
+a { color: var(--accent-2); }
+html.light a, body.light a { color: var(--accent); }
+a.btn.primary { color: #04121f; }
+html.light a.btn.primary, body.light a.btn.primary { color: #fff; }
+a.nav-link, a.nav-link:hover { color: var(--text); }
+.job + .job { margin-top: 8px; }
+.job ul { margin: 8px 0 0; padding-left: 20px; }
+.job li + li { margin-top: 6px; }
+.job li { max-width: 75ch; }
+
+
+/* -------------------- ACCESSIBILITY -------------------- */
+:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #04121f;
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+
+.form-control::placeholder { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+
+/* -------------------- SMALL SCREENS -------------------- */
+@media (max-width: 720px) {
+  .navbar { flex-direction: column; align-items: flex-start; padding-top: 12px; padding-bottom: 12px; }
+  .form-row { flex-direction: column; }
+}
+
+
+/* -------------------- PRINT (Save as PDF on the resume) -------------------- */
+@media print {
+  .site-header, footer, .skip-link { display: none; }
+  body { background: #fff; color: #000; }
+  :root, html.light { --text: #000; --muted: #333; --panel: #fff; --shadow: none; }
+  .card { box-shadow: none; border: 1px solid #ccc; background: #fff; }
+  .resume-grid { grid-template-columns: 1fr 2fr; }
+  a { color: #000; }
+}

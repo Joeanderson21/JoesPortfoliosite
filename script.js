@@ -1,61 +1,73 @@
 /* script.js
    Handles:
-   - Theme toggle (dark / light)
-   - Persisting theme to localStorage
-   - Basic contact form UX (client-side only)
+   - Theme toggle (dark / light) with saved preference and system default
+   - Contact form (opens the visitor's email app with the message filled in)
+   - "Save as PDF" button on the resume page
 */
 
-/* Theme toggle logic */
-(function(){
+(function () {
   const THEME_KEY = 'site_theme';
-  const body = document.body;
-  const btn = document.getElementById('themeToggle'); // Each page includes this element
+  const CONTACT_EMAIL = 'Joeanderson21@gmail.com';
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
 
-  // Initialize theme from localStorage (if present)
-  const saved = localStorage.getItem(THEME_KEY);
-  if(saved === 'light'){
-    body.classList.add('light');
-    if(btn) btn.textContent = '🌙';
-  } else {
-    if(btn) btn.textContent = '🌑';
+  function storedTheme() {
+    try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
   }
 
-  // Toggle handler
-  function toggleTheme(){
-    const isLight = body.classList.toggle('light');
-    localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark');
-    if(btn) btn.textContent = isLight ? '🌙' : '🌑';
+  function render() {
+    const isLight = root.classList.contains('light');
+    document.body.classList.toggle('light', isLight);
+    if (btn) {
+      btn.textContent = isLight ? '🌙' : '🌑';
+      btn.setAttribute('aria-pressed', String(isLight));
+      btn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    }
   }
 
-  if(btn) btn.addEventListener('click', toggleTheme);
+  // Theme class is set early by an inline <head> script (prevents a flash); this syncs the button.
+  if (!storedTheme() && window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) {
+    root.classList.add('light');
+  }
+  render();
 
-  // Contact form UX: show confirmation message on submit (client-side)
-  // NOTE: This does NOT send the form to a server unless the form's 'action' attribute points to an endpoint.
-  function handleContactForm(ev){
+  if (btn) {
+    btn.addEventListener('click', function () {
+      const isLight = root.classList.toggle('light');
+      try { localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark'); } catch (e) { /* storage unavailable */ }
+      render();
+    });
+  }
+
+  document.querySelectorAll('[data-print]').forEach(function (el) {
+    el.addEventListener('click', function () { window.print(); });
+  });
+
+  // Contact form: no backend, so build a mailto: link from the form fields.
+  function handleContactForm(ev) {
     ev.preventDefault();
     const form = ev.target;
     const status = form.querySelector('[data-form-status]');
-    // Basic validation example
-    const name = form.querySelector('[name="name"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const message = form.querySelector('[name="message"]').value.trim();
-    if(!name || !email || !message){
-      status.textContent = 'Please complete all required fields.';
-      status.style.color = 'var(--accent-2)';
+    const data = new FormData(form);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const subject = String(data.get('subject') || '').trim();
+    const message = String(data.get('message') || '').trim();
+
+    if (!name || !email || !subject || !message) {
+      status.textContent = 'Fill in your name, email, subject and message.';
       return;
     }
 
-    // If you want to actually send the form without a backend, integrate Formspree/Netlify Forms or hit an API Gateway endpoint.
-    // For now: show simulated success message and reset form.
-    status.textContent = 'Thanks — your message was saved locally (demo). Replace the handler or form action to send it.';
-    status.style.color = 'var(--accent)';
-    form.reset();
+    const body = message + '\n\n— ' + name + ' (' + email + ')';
+    window.location.href = 'mailto:' + CONTACT_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+    status.textContent = 'Opening your email app. If nothing opens, email ' + CONTACT_EMAIL + ' directly.';
   }
 
-  // Bind the contact form if present
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
-    if(contactForm) contactForm.addEventListener('submit', handleContactForm);
+    if (contactForm) contactForm.addEventListener('submit', handleContactForm);
   });
-
 })();

@@ -3,7 +3,7 @@
 A modern, responsive portfolio website showcasing cloud engineering expertise and projects. Built with vanilla HTML, CSS, and JavaScript, optimized for performance and deployed using GitHub Pages.
 
 ## 🚀 Live Site
-Visit the live portfolio: (https://joeanderson21.github.io/JoesPortfoliosite/portfolio.html)
+Visit the live portfolio: https://joeanderson21.github.io/JoesPortfoliosite/
 
 ## 💼 About
 Former Director of Early Childhood Education turned Cloud Engineer. This portfolio demonstrates my transition into cloud technologies with a focus on:
@@ -17,7 +17,7 @@ Former Director of Early Childhood Education turned Cloud Engineer. This portfol
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Hosting**: GitHub Pages
 - **Cloud Skills**: AWS, S3, CloudFront, IAM
-- **Tools**: Git, GitHub Actions, Claude ai
+- **Tools**: Git, GitHub, Claude Code
 - **Design**: Responsive design, dark/light theme toggle
 
 ## 📁 Project Structure
@@ -28,15 +28,16 @@ Former Director of Early Childhood Education turned Cloud Engineer. This portfol
 ├── resume.html         # Resume/CV page
 ├── portfolio.html      # Projects showcase
 ├── contact.html        # Contact information
-├── Headshot.jpg        # Profile photo
+├── 404.html            # Page not found
+├── HeadshotJJA.jpg     # Profile photo
 └── README.md          # Project documentation
 ```
 
 ## ✨ Features
 - **Responsive Design**: Mobile-first approach, works on all devices
-- **Theme Toggle**: Light/dark mode switching with localStorage persistence
+- **Theme Toggle**: Light/dark mode that follows your system setting and remembers your choice
 - **Performance Optimized**: Vanilla JS, minimal dependencies
-- **SEO Friendly**: Semantic HTML, meta tags, structured content
+- **SEO Friendly**: Semantic HTML, page descriptions, Open Graph tags
 - **Cloud-Focused**: Highlights AWS expertise and cloud projects
 
 ## 🎨 Design Highlights
@@ -49,7 +50,7 @@ Former Director of Early Childhood Education turned Cloud Engineer. This portfol
 ## 🚀 Quick Start
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/joeanderson21/JoesPorfoliosite.git
+   git clone https://github.com/joeanderson21/JoesPortfoliosite.git
    cd JoesPortfoliosite
    ```
 

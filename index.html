@@ -4,52 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Joseph John Anderson — Home</title>
-  <meta name="description" content="[Short professional summary]" />
+  <meta name="description" content="Joe Anderson is a cloud engineer building secure, well-documented AWS systems after a career leading early childhood education programs." />
+  <meta property="og:title" content="Joseph John Anderson — Home" />
+  <meta property="og:description" content="Joe Anderson is a cloud engineer building secure, well-documented AWS systems after a career leading early childhood education programs." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1220'/%3E%3Ctext x='32' y='42' font-size='28' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2322d3ee'%3EJJA%3C/text%3E%3C/svg%3E">
+  <script>try{var t=localStorage.getItem("site_theme");if(t?t==="light":matchMedia("(prefers-color-scheme: light)").matches)document.documentElement.classList.add("light")}catch(e){}</script>
   <!-- Link to the centralized stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Site header — same markup should exist on every page for consistency -->
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container navbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">JJA</div>
-        <div>
-          <div>Joe Anderson</div>
-          <small class="muted">Cloud • Security • Engineering</small>
-        </div>
-      </div>
-
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true">JJA</span>
+        <span>Joe Anderson<small class="muted brand-sub">Cloud • Security • Engineering</small></span>
+      </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="index.html" aria-current="page">Home</a>
         <a class="nav-link" href="resume.html">Resume</a>
         <a class="nav-link" href="portfolio.html">Portfolio</a>
         <a class="nav-link" href="contact.html">Contact</a>
-        <!-- Theme toggle button (id referenced in script.js) -->
-        <button id="themeToggle" class="btn" title="Toggle light/dark theme" aria-pressed="false">🌑</button>
+        <button id="themeToggle" type="button" class="btn" aria-label="Switch to light theme" aria-pressed="false">🌑</button>
         <a class="btn primary" href="resume.html">View Resume</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="container hero">
       <div>
-        <h1>Hello — I'm Joe Anderson</h1>
+        <h1>Hi, I'm Joe Anderson</h1>
         <p class="muted">
-          Former Director of Early Childhood Education turned Cloud Engineer. I design secure,
-          reliable, and maintainable cloud systems with an emphasis on documentation .
+          Former Director of Early Childhood Education turned cloud engineer. I build secure,
+          reliable, and maintainable AWS systems, and I document them so the next person can run them.
         </p>
 
-        <div style="height:18px;"></div>
+        <div class="spacer"></div>
 
         <p>
           <!-- Call-to-action -->
-          <a class="btn primary" href="resume.html">View My Resume</a>
-          <a class="btn" href="portfolio.html">See Projects</a>
+          <a class="btn primary" href="resume.html">View my resume</a>
+          <a class="btn" href="portfolio.html">See projects</a>
         </p>
 
-        <div style="height:20px;"></div>
+        <div class="spacer"></div>
 
         <div class="chips">
           <span class="chip">AWS/CLI</span>
@@ -61,23 +61,21 @@
 
       <aside>
         <div class="card">
-          <!-- Profile photo placeholder -->
-          <!-- Replace 'path-to-image.jpg' with your real file and upload it into S3 -->
-          <div style="display:grid; place-items:center; gap:12px;">
-            <img src="HeadshotJJA.jpg" alt="Joe profile photo" style="width:100%; border-radius:8px; object-fit:cover; max-height:260px;" onerror="this.style.display='none'">
+                    <div style="display:grid; place-items:center; gap:12px;">
+            <img src="HeadshotJJA.jpg" alt="Joe Anderson" style="width:100%; border-radius:8px; object-fit:cover; max-height:260px;" onerror="this.style.display='none'">
             <h3>Highlights</h3>
-            <p class="muted">AWS Solutions Architect • Cloud Practitioner • S3 & CloudFront • IAM hardening</p>
+            <p class="muted">AWS Certified Solutions Architect • AWS Certified Cloud Practitioner • S3 &amp; CloudFront • IAM hardening</p>
           </div>
         </div>
       </aside>
     </section>
 
     <section class="container">
-      <h2>About Me</h2>
+      <h2>About me</h2>
       <div class="card">
         <p>
-          <!-- Brief professional summary — replace with personal text -->
-          I am a cloud engieneer by hobby. I am working on workloads from static sites to, ETL workloads, event driven/ serverless achritechtures and cost optimizing projects.
+          I spent years leading teams, compliance audits and staff training in early childhood education, and I now build on AWS.
+          My projects cover static sites, ETL workloads, event-driven and serverless architectures, and cost optimization.
         </p>
       </div>
     </section>
@@ -85,14 +83,12 @@
 
   <footer>
     <div class="container">
-      <small class="muted">© <span id="year"></span> Joe Anderson. Built with HTML/CSS/JS/Claudecode.</small>
+      <small class="muted">© <span id="year"></span> Joe Anderson. Built with HTML, CSS, JavaScript and Claude Code.</small>
     </div>
   </footer>
 
-  <!-- Central JS loaded once for theme toggle & form behavior -->
   <script src="script.js"></script>
   <script>
-    // Small inline helper to set year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>

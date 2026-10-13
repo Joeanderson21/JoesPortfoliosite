@@ -4,47 +4,59 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Joe Anderson — Resume</title>
-  <meta name="description" content="Resume and professional experience for Joe" />
+  <meta name="description" content="Resume of Joe Anderson: cloud and security projects on AWS, plus leadership, compliance and training experience." />
+  <meta property="og:title" content="Joe Anderson — Resume" />
+  <meta property="og:description" content="Resume of Joe Anderson: cloud and security projects on AWS, plus leadership, compliance and training experience." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1220'/%3E%3Ctext x='32' y='42' font-size='28' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2322d3ee'%3EJJA%3C/text%3E%3C/svg%3E">
+  <script>try{var t=localStorage.getItem("site_theme");if(t?t==="light":matchMedia("(prefers-color-scheme: light)").matches)document.documentElement.classList.add("light")}catch(e){}</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container navbar">
-      <div class="brand">
-        <div class="logo">JJA</div>
-        <div>Joe Anderson</div>
-      </div>
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true">JJA</span>
+        <span>Joe Anderson<small class="muted brand-sub">Cloud • Security • Engineering</small></span>
+      </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="resume.html">Resume</a>
+        <a class="nav-link" href="resume.html" aria-current="page">Resume</a>
         <a class="nav-link" href="portfolio.html">Portfolio</a>
         <a class="nav-link" href="contact.html">Contact</a>
-        <button id="themeToggle" class="btn" title="Toggle theme">🌑</button>
-        <a class="btn primary" href="resume.pdf" download>Download PDF</a>
+        <button id="themeToggle" type="button" class="btn" aria-label="Switch to light theme" aria-pressed="false">🌑</button>
+        <button type="button" class="btn primary" data-print>Save as PDF</button>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="container">
       <h1>Resume</h1>
+      <p class="muted summary">Cloud engineer with AWS Solutions Architect and Cloud Practitioner certifications, and a background leading teams, compliance audits and training. I build secure AWS systems and document them clearly.</p>
       <div class="resume-grid">
         <aside class="card">
           <h3>Contact</h3>
-          <p class="muted">Joeanderson21@gmail.com • Denver, Colorado</p>
+          <p class="muted"><a href="mailto:Joeanderson21@gmail.com">Joeanderson21@gmail.com</a><br>Denver, Colorado</p>
 
-          <div style="height:18px;"></div>
+          <div class="spacer"></div>
+
+          <h3>Certifications</h3>
+          <p class="muted">AWS Certified Solutions Architect<br>AWS Certified Cloud Practitioner</p>
+
+          <div class="spacer"></div>
 
           <h3>Skills</h3>
           <div>
             <strong>Languages</strong>
-            <p class="muted">Python, git</p>
+            <p class="muted">Python, Bash</p>
             <strong>Cloud & DevOps</strong>
-            <p class="muted">AWS (S3, CloudFront, EC2, RDS, IAM</p>
+            <p class="muted">AWS (S3, CloudFront, EC2, RDS, IAM)</p>
             <strong>Tools</strong>
             <p class="muted">Git, GitHub, CloudWatch, CLI</p>
-            <strong> Soft skills </strong>
-            <p class="muted">time mangement, De-escalation, empathy</p>
+            <strong>Leadership</strong>
+            <p class="muted">Time management, de-escalation, empathy</p>
           </div>
 
         </aside>
@@ -53,30 +65,30 @@
           <div class="card">
             <h2>Professional Experience</h2>
 
-            <!-- Example job entry (reverse-chronological order) -->
             <article class="job">
-              <h3>Lead Teacher- Denver JCC</h3>
-              <div class="muted">2025 — Present</div>
+              <h3>Lead Teacher — Denver JCC</h3>
+              <div class="muted">2025 – Present</div>
               <ul>
               <li>Create, manage, and participate in various learning environments and activities that provide opportunities for students to develop to their fullest potential and achieve their learning objectives </li>
               <li>Ensure all curriculum is deemed safe per Colorado State Licensing Standards for preschools</li>
-              <li>Ensure the health, safety, and wellbeing of all children your classroom </li>
-              <li>Document the learning and experiences of the children to be shared with families and the community, through blog posts, Brightwheel messages and instillations surrounding the classroom</li>
-              <li>Gave trainings on how to document learning for infants and toddlers as well as family engagment</li>
-              <li>Design learning documentation for practioners and parents</li>
+              <li>Ensure the health, safety, and well-being of all children in your classroom</li>
+              <li>Document the learning and experiences of the children to be shared with families and the community, through blog posts, Brightwheel messages and installations around the classroom</li>
+              <li>Gave trainings on how to document learning for infants and toddlers as well as family engagement</li>
+              <li>Design learning documentation for practitioners and parents</li>
+              </ul>
             </article>
 
             <article class="job">
               <h3>Director of Early Childhood Education — The Goddard School</h3>
-              <div class="muted">11/24- 5/25</div>
+              <div class="muted">Nov 2024 – May 2025</div>
               <ul>
                 <li>Led multi-site compliance audits and staff training programs.</li>
-                <li> Gave onboarding trainings to new staff memebers including, SaaS application set up. Multifactor authentication.</li>
-                <li> Designed documentation pipelines for licensing and safety checks.</li>
-                <li> Assisted Directors with Microsoft defender for Multifactor authentication and account setup</li>
-                <li> Assisted in account recovery in Microsoft 365 enviornment</li>
-                <li> Set up and managed Avigilon security system</li>
-                <li> Troubleshooted HP printer connectivity issues</li>
+                <li>Trained new staff members on SaaS application setup and multi-factor authentication.</li>
+                <li>Designed documentation pipelines for licensing and safety checks.</li>
+                <li> Helped directors set up Microsoft Defender multi-factor authentication and accounts</li>
+                <li>Assisted with account recovery in a Microsoft 365 environment</li>
+                <li>Set up and managed the Avigilon security system</li>
+                <li>Troubleshot HP printer connectivity issues</li>
               </ul>
             </article>
 
