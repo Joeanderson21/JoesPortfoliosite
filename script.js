@@ -70,4 +70,25 @@
     const contactForm = document.getElementById('contactForm');
     if (contactForm) contactForm.addEventListener('submit', handleContactForm);
   });
+
+  // Diagram viewer: click or press Enter/Space on a project diagram to open it large.
+  document.addEventListener('DOMContentLoaded', function () {
+    const dialog = document.getElementById('diagramDialog');
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    const body = dialog.querySelector('.diagram-dialog-body');
+    function open(el) {
+      const svg = el.querySelector('svg');
+      if (!svg) return;
+      body.replaceChildren(svg.cloneNode(true));
+      dialog.showModal();
+    }
+    document.querySelectorAll('[data-enlarge]').forEach(function (el) {
+      el.addEventListener('click', function () { open(el); });
+      el.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); open(el); }
+      });
+    });
+    dialog.querySelector('[data-close-diagram]').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (ev) { if (ev.target === dialog) dialog.close(); });
+  });
 })();

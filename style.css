@@ -490,3 +490,24 @@ a.nav-link, a.nav-link:hover { color: var(--text); }
 
 .plain-list { margin: 8px 0 0; padding-left: 20px; max-width: 75ch; }
 .plain-list li + li { margin-top: 8px; }
+
+.name-line {
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+[data-enlarge] { cursor: zoom-in; }
+
+.diagram-dialog {
+  width: min(94vw, 960px);
+  max-height: 94vh;
+  padding: 16px;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  background: var(--card-bg);
+  color: var(--text);
+}
+.diagram-dialog::backdrop { background: rgba(0, 0, 0, 0.7); }
+.diagram-dialog-body { margin-top: 12px; }
+.diagram-dialog-body svg { width: 100%; height: auto; max-height: 80vh; display: block; background: #0a0f1a; border-radius: 12px; }
