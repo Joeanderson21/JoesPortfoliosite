@@ -1,23 +1,22 @@
-# Joe Anderson - Cloud Portfolio Website
+# Joe Anderson - Personal Website
 
-A modern, responsive portfolio website showcasing cloud engineering expertise and projects. Built with vanilla HTML, CSS, and JavaScript, optimized for performance and deployed using GitHub Pages.
+A modern, responsive portfolio website covering early childhood leadership, real estate, and AWS side projects. Built with vanilla HTML, CSS, and JavaScript, optimized for performance and deployed using GitHub Pages.
 
 ## 🚀 Live Site
-Visit the live portfolio: (https://joeanderson21.github.io/JoesPortfoliosite/portfolio.html)
+Visit the live portfolio: https://joeanderson21.github.io/JoesPortfoliosite/
 
 ## 💼 About
-Former Director of Early Childhood Education turned Cloud Engineer. This portfolio demonstrates my transition into cloud technologies with a focus on:
-- AWS Solutions Architecture
-- Cloud Security & IAM Hardening
-- Networking & Infrastructure
-- Python Development
-- Cost Optimization
+Early childhood leader and licensed Colorado real estate agent. The site covers:
+- Early childhood leadership: licensing compliance, staff training and enrollment growth
+- Real estate in the Denver metro area
+- A resume
+- AWS side projects: a hobby, built from AWS Cloud Quest labs
 
 ## 🛠️ Technologies Used
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Hosting**: GitHub Pages
 - **Cloud Skills**: AWS, S3, CloudFront, IAM
-- **Tools**: Git, GitHub Actions, Claude ai
+- **Tools**: Git, GitHub, Claude Code
 - **Design**: Responsive design, dark/light theme toggle
 
 ## 📁 Project Structure
@@ -26,18 +25,19 @@ Former Director of Early Childhood Education turned Cloud Engineer. This portfol
 ├── style.css           # Centralized stylesheet
 ├── script.js           # Theme toggle & interactive features
 ├── resume.html         # Resume/CV page
-├── portfolio.html      # Projects showcase
+├── portfolio.html      # AWS side projects
 ├── contact.html        # Contact information
-├── Headshot.jpg        # Profile photo
+├── 404.html            # Page not found
+├── HeadshotJJA.jpg     # Profile photo
 └── README.md          # Project documentation
 ```
 
 ## ✨ Features
 - **Responsive Design**: Mobile-first approach, works on all devices
-- **Theme Toggle**: Light/dark mode switching with localStorage persistence
+- **Theme Toggle**: Light/dark mode that follows your system setting and remembers your choice
 - **Performance Optimized**: Vanilla JS, minimal dependencies
-- **SEO Friendly**: Semantic HTML, meta tags, structured content
-- **Cloud-Focused**: Highlights AWS expertise and cloud projects
+- **SEO Friendly**: Semantic HTML, page descriptions, Open Graph tags
+- **AWS side projects**: A page for hands-on cloud projects
 
 ## 🎨 Design Highlights
 - Clean, professional layout
@@ -49,7 +49,7 @@ Former Director of Early Childhood Education turned Cloud Engineer. This portfol
 ## 🚀 Quick Start
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/joeanderson21/JoesPorfoliosite.git
+   git clone https://github.com/joeanderson21/JoesPortfoliosite.git
    cd JoesPortfoliosite
    ```
 
