@@ -189,7 +189,7 @@ a.btn {
   grid-template-columns: 1fr 420px;
   gap: 32px;
   align-items: center;
-  padding: 36px 0;
+  padding: 36px var(--container-padding);
 }
 
 @media (max-width: 920px) {
@@ -356,6 +356,7 @@ p.muted {
   background: transparent;
   color: var(--text);
   font-family: inherit;
+  font-size: 16px;
 }
 
 textarea.form-control {
@@ -511,3 +512,77 @@ a.nav-link, a.nav-link:hover { color: var(--text); }
 .diagram-dialog::backdrop { background: rgba(0, 0, 0, 0.7); }
 .diagram-dialog-body { margin-top: 12px; }
 .diagram-dialog-body svg { width: 100%; height: auto; max-height: 80vh; display: block; background: #0a0f1a; border-radius: 12px; }
+
+
+/* -------------------- PHONES AND TOUCH SCREENS -------------------- */
+/* 44px minimum tap targets on touch devices and narrow screens */
+@media (pointer: coarse), (max-width: 720px) {
+  a.nav-link,
+  .btn {
+    min-height: 44px;
+  }
+
+  a.nav-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .btn {
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .brand,
+  .form-control {
+    min-height: 44px;
+  }
+}
+
+/* Short screens (phones in landscape): do not pin the header */
+@media (max-height: 500px) {
+  .site-header {
+    position: static;
+  }
+}
+
+/* Compact header: scrolls away instead of covering the page, with a shorter nav */
+@media (max-width: 720px) {
+  .site-header {
+    position: static;
+  }
+
+  .brand-sub,
+  .nav-links .btn.primary {
+    display: none;
+  }
+
+  .navbar {
+    gap: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .nav-links {
+    gap: 2px 4px;
+  }
+}
+
+/* -------------------- 404 PAGE -------------------- */
+.notfound {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.notfound .btn-row {
+  justify-content: center;
+}
+
+.notfound-code {
+  margin: 0 0 4px;
+  font-size: clamp(56px, 18vw, 96px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+}
