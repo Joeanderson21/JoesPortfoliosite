@@ -186,7 +186,7 @@ a.btn {
 /* -------------------- HERO SECTION -------------------- */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 320px;
   gap: 32px;
   align-items: center;
   padding: 36px var(--container-padding);
@@ -585,4 +585,16 @@ a.nav-link, a.nav-link:hover { color: var(--text); }
   font-weight: 800;
   line-height: 1;
   color: var(--accent);
+}
+
+/* Headshot: smaller, 4:5 crop that keeps the whole face (top of head to chin) in frame */
+.headshot {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 21%;
+  border-radius: 12px;
 }
