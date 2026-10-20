@@ -167,6 +167,7 @@ a.nav-link[aria-current="page"] {
 }
 
 .btn.primary {
+  background: var(--accent);
   background: linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent), black 10%));
   color: #04121f;
   border: none;
@@ -201,6 +202,7 @@ a.btn {
 
 /* -------------------- CARDS -------------------- */
 .card {
+  background: var(--panel);
   background: linear-gradient(180deg, color-mix(in oklab, var(--panel), white 2%), var(--panel));
   border-radius: var(--radius);
   padding: 18px;
