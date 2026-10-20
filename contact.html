@@ -43,21 +43,25 @@
 
       <div class="card">
         <form id="contactForm" aria-label="Contact form">
-          <div class="form-row field">
-            <label class="sr-only" for="name">Your name</label>
-            <input class="form-control" id="name" type="text" name="name" placeholder="Your name" autocomplete="name" required>
-            <label class="sr-only" for="email">Your email</label>
-            <input class="form-control" id="email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+          <div class="form-row">
+            <div class="field">
+              <label class="field-label" for="name">Your name</label>
+              <input class="form-control" id="name" type="text" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label class="field-label" for="email">Your email</label>
+              <input class="form-control" id="email" type="email" name="email" autocomplete="email" required>
+            </div>
           </div>
 
           <div class="field">
-            <label class="sr-only" for="subject">Subject</label>
-            <input class="form-control" id="subject" type="text" name="subject" placeholder="Subject" required>
+            <label class="field-label" for="subject">Subject</label>
+            <input class="form-control" id="subject" type="text" name="subject" required>
           </div>
 
           <div class="field">
-            <label class="sr-only" for="message">Message</label>
-            <textarea class="form-control" id="message" name="message" placeholder="Message" required></textarea>
+            <label class="field-label" for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" required></textarea>
           </div>
 
           <div class="form-actions">

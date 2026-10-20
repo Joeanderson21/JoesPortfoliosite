@@ -431,6 +431,9 @@ footer {
 }
 
 .field { margin-bottom: 12px; }
+.form-row > .field { flex: 1; min-width: 0; margin-bottom: 0; }
+.form-row { margin-bottom: 12px; }
+.field-label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; }
 .form-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .form-status { color: var(--muted); }
 
@@ -464,6 +467,8 @@ a.nav-link, a.nav-link:hover { color: var(--text); }
   text-decoration: none;
 }
 .skip-link:focus { top: 12px; }
+/* Light theme: dark text on the darker light-theme accent is only 3.2:1, so use white (5.9:1) */
+html.light .skip-link, body.light .skip-link { color: #ffffff; }
 
 .form-control::placeholder { color: var(--muted); }
 

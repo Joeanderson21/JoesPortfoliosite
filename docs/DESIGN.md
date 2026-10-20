@@ -29,7 +29,7 @@ Defined in `:root` (dark) and overridden in `html.light, body.light`. Contrast r
 | `--line` | `rgba(255,255,255,.08)` | `rgba(15,23,42,.12)` | Hairlines, hover fill |
 | `--diagram-bg` | dark gradient | same dark gradient | AWS diagram tiles stay dark in both themes |
 
-Other fixed values: primary button text is `#04121f` in dark (6.8:1 on `--accent`) and `#ffffff` in light (5.9:1). Links use `--accent-2` in dark and `--accent` in light (5.7:1). The focus ring uses `--accent-2` (3.5:1 on the light background, which meets the 3:1 non-text minimum).
+Other fixed values: primary button text and skip-link text are `#04121f` in dark (6.8:1 on `--accent`) and `#ffffff` in light (5.9:1). Links use `--accent-2` in dark and `--accent` in light (5.7:1). The focus ring uses `--accent-2` (3.5:1 on the light background, which meets the 3:1 non-text minimum).
 
 **Rule:** add or change a color by editing the variables, in both blocks, then re-check contrast in both themes.
 
@@ -66,7 +66,7 @@ Other fixed values: primary button text is `#04121f` in dark (6.8:1 on `--accent
 | Project card | `.project-card`, `.project-diagram`, `.project-body` | Diagram tile is square; hover lifts 2px |
 | Diagram viewer | `[data-enlarge]` + `<dialog class="diagram-dialog">` | Opens a clone of the SVG; Enter/Space and click; Esc and backdrop close |
 | Resume job | `article.job` | Bullets capped at 75ch; print layout in `@media print` |
-| Form | `.form-control`, `.form-row`, `.field`, `.form-status` | 16px text (prevents iOS zoom); status is an `aria-live` region |
+| Form | `.form-control`, `.form-row`, `.field`, `.field-label`, `.form-status` | Every control has a visible `.field-label` above it (no placeholder-only fields); 16px input text (prevents iOS zoom); status is an `aria-live` region |
 | Footer | `footer` | Year is filled by an inline script |
 | 404 | `.notfound`, `.notfound-code` | Centered card with three links |
 
@@ -79,14 +79,15 @@ Other fixed values: primary button text is `#04121f` in dark (6.8:1 on `--accent
 
 ## Accessibility floor
 
-Skip link; visible focus; 44px tap targets on touch and narrow screens; reduced-motion support; one `<h1>` per page; `alt` on images; labelled form controls; `aria-live` form status; SVG diagrams with `role="img"` and `aria-label`; 4.5:1 text contrast in both themes.
+Skip link; visible focus; 44px tap targets on touch and narrow screens; reduced-motion support; one `<h1>` per page; `alt` on images; visibly labelled form controls; `aria-live` form status; SVG diagrams with `role="img"` and `aria-label`; 4.5:1 text contrast in both themes.
 
 ## Known gaps (as of this writing)
 
-1. **Light-mode skip link fails contrast.** `.skip-link` uses `#04121f` on `--accent` (`#0369a1`), 3.2:1. Fix: white text in light mode, like `.btn.primary` (5.9:1).
-2. **Contact form labels are screen-reader-only.** The visible field name is the placeholder, which disappears once the visitor types. Fix: show visible labels above the fields.
-3. **Emoji as the theme icon.** The toggle uses 🌑/🌙, which render differently per platform. Low priority; it has an accessible name.
-4. **Header, nav and footer are duplicated across five pages**, so edits must be repeated.
+1. **Input borders are faint.** `.form-control` uses `--line` (about 8% white in dark, 12% dark in light) as its border, which is well under the 3:1 non-text contrast WCAG 1.4.11 asks of a field boundary. Fix: a stronger border token for form controls.
+2. **Emoji as the theme icon.** The toggle uses 🌑/🌙, which render differently per platform. Low priority; it has an accessible name.
+3. **Header, nav and footer are duplicated across five pages**, so edits must be repeated.
+
+Fixed: the light-mode skip link now uses white text (5.9:1, was 3.2:1), and the contact form shows visible labels instead of relying on placeholders.
 
 ## Changing the system
 
