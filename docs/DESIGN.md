@@ -26,6 +26,7 @@ Defined in `:root` (dark) and overridden in `html.light, body.light`. Contrast r
 | `--card-border-hover` | `#25335c` | `#94a3b8` | Project card hover |
 | `--card-head` | `#e9f0ff` | `#0b1220` | Project card titles |
 | `--card-text` | `#b7c4e2` | `#334155` | Project card body (10.9:1 / 10.4:1) |
+| `--field-border` | `#64748b` | `#64748b` | Form control borders (3.6:1 on the dark card, 4.8:1 on the light card) |
 | `--line` | `rgba(255,255,255,.08)` | `rgba(15,23,42,.12)` | Hairlines, hover fill |
 | `--diagram-bg` | dark gradient | same dark gradient | AWS diagram tiles stay dark in both themes |
 
@@ -83,11 +84,10 @@ Skip link; visible focus; 44px tap targets on touch and narrow screens; reduced-
 
 ## Known gaps (as of this writing)
 
-1. **Input borders are faint.** `.form-control` uses `--line` (about 8% white in dark, 12% dark in light) as its border, which is well under the 3:1 non-text contrast WCAG 1.4.11 asks of a field boundary. Fix: a stronger border token for form controls.
-2. **Emoji as the theme icon.** The toggle uses 🌑/🌙, which render differently per platform. Low priority; it has an accessible name.
-3. **Header, nav and footer are duplicated across five pages**, so edits must be repeated.
+1. **Emoji as the theme icon.** The toggle uses 🌑/🌙, which render differently per platform. Low priority; it has an accessible name.
+2. **Header, nav and footer are duplicated across five pages**, so edits must be repeated.
 
-Fixed: the light-mode skip link now uses white text (5.9:1, was 3.2:1), and the contact form shows visible labels instead of relying on placeholders.
+Fixed: the light-mode skip link uses white text (5.9:1, was 3.2:1); the contact form shows visible labels instead of relying on placeholders; form control borders use `--field-border` (at least 3.6:1, were about 1.1:1).
 
 ## Changing the system
 
