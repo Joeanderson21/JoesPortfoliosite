@@ -1,0 +1,28 @@
+name: CI
+
+# Checks only. The site itself is published by GitHub Pages
+# (pages-build-deployment) whenever main changes.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate HTML
+        run: |
+          pip install html5validator
+          html5validator --root . --ignore .claude
+
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --offline --include-fragments './*.html'
+          fail: true
