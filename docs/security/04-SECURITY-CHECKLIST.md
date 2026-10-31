@@ -17,13 +17,13 @@ Last full run: 2026-10-31 (repo checks by Claude; account and settings checks ar
 - [x] No resources load from other origins: no `src`/`href` to `http(s)://` outside `<a>`, canonical and Open Graph tags; no `@import` or remote `url()` in `style.css`.
 - [x] All 9 `target="_blank"` links have `rel="noopener noreferrer"`.
 - [x] No `innerHTML`, `eval`, `outerHTML` or `insertAdjacent` in `script.js` or pages.
-- [ ] **Open (T-4):** `404.html` still uses `document.write` for `<base>`. Remove, then tick.
+- [x] `404.html` has no `document.write`; it uses a static `<base href="/JoesPortfoliosite/">` (T-4 fixed 2026-10-31).
 - [x] Contact form: subject and body pass through `encodeURIComponent`; address comes from `CONTACT_EMAIL` only.
 
 ### Pipeline (SR-10, 11)
 - [x] `.github/workflows/ci.yml` sets `permissions: contents: read` at top level.
 - [x] No `pull_request_target` anywhere; no secrets referenced.
-- [ ] **Open (T-11):** pin `html5validator` to an exact version and pin each action to a commit SHA.
+- [x] `html5validator` pinned to `==0.4.2`; `actions/checkout` and `lychee-action` pinned to commit SHAs with the version in a comment (T-11 fixed 2026-10-31). When updating, look up the new tag's SHA with `git ls-remote --tags <repo-url>`.
 - [x] Zero runtime dependencies; no `package.json`, no build step.
 - [ ] If an agent skill or script was added or updated: read it, confirm no network calls.
 
@@ -64,7 +64,5 @@ Repo → Settings:
 
 | Item | Effort | Do next? |
 |---|---|---|
-| T-4 remove `document.write` in `404.html` | 15 min | Yes |
-| T-11 pin CI tool and action versions | 15 min | Yes |
-| SR-8 Content-Security-Policy meta tag | 1-2 hours with testing | After T-4 |
+| SR-8 Content-Security-Policy meta tag | 1-2 hours with testing | Next: the 404 blocker is gone; inline year scripts, one `style=` and one `onerror=` remain |
 | Part B checks | 20 min, in the GitHub UI | **Highest value of anything here** |

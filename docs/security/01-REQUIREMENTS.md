@@ -25,7 +25,7 @@ Priority: **Must** = site is not acceptable without it. **Should** = do it, but 
 
 ### In the browser
 - **SR-5 (Must)** No runtime requests to other origins: no CDN scripts, web fonts, embeds or analytics. Links out are allowed.
-- **SR-6 (Must)** No dynamic HTML or code sinks (`innerHTML`, `eval`, `document.write`, `insertAdjacent*`) fed from URLs, form input or storage. Known exception: the `document.write` in `404.html`, tracked as T-4.
+- **SR-6 (Must)** No dynamic HTML or code sinks (`innerHTML`, `eval`, `document.write`, `insertAdjacent*`) fed from URLs, form input or storage. No exceptions currently (the `404.html` `document.write` was removed, T-4).
 - **SR-7 (Must)** Every `target="_blank"` link has `rel="noopener noreferrer"`.
 - **SR-8 (Should)** Ship a Content-Security-Policy as a `<meta>` tag (GitHub Pages cannot set response headers). Blocked until inline scripts, the one inline `style=` and the one inline `onerror=` are removed or hashed (see architecture doc).
 

@@ -19,7 +19,7 @@ flowchart LR
 | Identity | Passkey or authenticator 2-step on GitHub and Gmail; recovery codes offline | SR-13 |
 | Access | Agents and apps scoped to this repo; they push to branches, never to `main` | SR-12, 14 |
 | Change control | Everything reaches `main` by pull request that Joe reads and merges; force-push and deletion blocked | SR-4, 12 |
-| Pipeline | `permissions: contents: read`; no `pull_request_target`; no secrets used; pin actions and tool versions | SR-10 |
+| Pipeline | `permissions: contents: read`; no `pull_request_target`; no secrets used; actions pinned to commit SHAs, validator pinned to an exact version | SR-10 |
 | Build | None. No bundler, no npm, no runtime dependencies | SR-11 |
 | Hosting | GitHub Pages over HTTPS; Pages is the only deploy path | SR-16 |
 | Browser | No third-party requests; no storage but the theme; `noopener noreferrer`; no dynamic HTML | SR-1, 5, 6, 7 |
@@ -53,7 +53,7 @@ Before it can ship, these have to change, and each needs a browser test in both 
 |---|---|---|
 | Inline theme script in `<head>` (prevents flash of wrong theme) | all 5 pages | Keep it, add its SHA-256 to `script-src`; the hash must be updated whenever the script changes |
 | Inline year script at the page foot | the 4 content pages | Move into `script.js` |
-| `document.write` for `<base>` | `404.html` | Use root-relative paths; removes T-4 |
+| ~~`document.write` for `<base>`~~ | `404.html` | Done: static `<base href="/JoesPortfoliosite/">` |
 | One inline `style="…"` | `index.html` | Move to `style.css` |
 | One inline `onerror="…"` on the headshot | `index.html` | Drop it, or replace with a `load`/`error` listener in `script.js` |
 
