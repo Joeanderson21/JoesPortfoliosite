@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-miswyNFYuOzaNQbb68h2R3oUYMQYJdTWfLBh3JrrD9k='; style-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'none'; connect-src 'none'; font-src 'none'; object-src 'none'; frame-src 'none'" />
   <title>Joe Anderson — Early Childhood Leader and Denver Real Estate Agent</title>
   <meta name="description" content="Joe Anderson is an early childhood director and licensed Colorado real estate agent with experience in licensing compliance, staff training and enrollment growth." />
   <meta property="og:title" content="Joe Anderson — Early Childhood Leader and Denver Real Estate Agent" />
@@ -66,8 +67,8 @@
 
       <aside>
         <div class="card">
-          <div style="display:grid; place-items:center; gap:12px;">
-            <img class="headshot" src="HeadshotJJA.jpg" width="800" height="1237" alt="Joe Anderson" onerror="this.style.display='none'">
+          <div class="headshot-wrap">
+            <img class="headshot" src="HeadshotJJA.jpg" width="800" height="1237" alt="Joe Anderson">
             <h3>Highlights</h3>
             <p class="muted">Colorado PDIS Level 6 • B.S., Early Childhood Education • Early Childhood Leadership graduate certificate, CU Denver • Licensed Colorado real estate agent</p>
           </div>
@@ -136,9 +137,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
 

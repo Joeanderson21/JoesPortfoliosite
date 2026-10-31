@@ -17,6 +17,8 @@ Last full run: 2026-10-31 (repo checks by Claude; account and settings checks ar
 - [x] No resources load from other origins: no `src`/`href` to `http(s)://` outside `<a>`, canonical and Open Graph tags; no `@import` or remote `url()` in `style.css`.
 - [x] All 9 `target="_blank"` links have `rel="noopener noreferrer"`.
 - [x] No `innerHTML`, `eval`, `outerHTML` or `insertAdjacent` in `script.js` or pages.
+- [x] Every page has the CSP meta tag and `python3 .github/scripts/check_csp.py` passes (also runs in CI). If it fails after you edited the theme script, copy the new hash into all five pages.
+- [ ] After a change to `script.js` or `style.css`: open each page in a browser with the console open and confirm there are no "Content Security Policy" errors.
 - [x] `404.html` has no `document.write`; it uses a static `<base href="/JoesPortfoliosite/">` (T-4 fixed 2026-10-31).
 - [x] Contact form: subject and body pass through `encodeURIComponent`; address comes from `CONTACT_EMAIL` only.
 
@@ -64,5 +66,5 @@ Repo → Settings:
 
 | Item | Effort | Do next? |
 |---|---|---|
-| SR-8 Content-Security-Policy meta tag | 1-2 hours with testing | Next: the 404 blocker is gone; inline year scripts, one `style=` and one `onerror=` remain |
+| None in code | | Everything left is in Part B (your accounts and GitHub settings) |
 | Part B checks | 20 min, in the GitHub UI | **Highest value of anything here** |

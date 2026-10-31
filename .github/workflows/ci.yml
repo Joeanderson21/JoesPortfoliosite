@@ -21,6 +21,9 @@ jobs:
           pip install html5validator==0.4.2
           html5validator --root . --ignore .claude
 
+      - name: Check Content-Security-Policy matches inline code
+        run: python3 .github/scripts/check_csp.py
+
       - name: Check internal links
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
