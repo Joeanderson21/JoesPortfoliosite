@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Guidance for AI agents working in this repo. Read this first; read `docs/DESIGN.md` before any visual change.
+Guidance for AI agents working in this repo. Read this first; read `docs/DESIGN.md` before any visual change, and `docs/security/03-SECURITY-ARCHITECTURE.md` (the "Rules for anyone changing the site" section) before touching `script.js`, workflows, `404.html` or anything that loads from another origin.
 
 ## What this is
 
