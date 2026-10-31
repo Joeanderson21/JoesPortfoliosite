@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Guidance for AI agents working in this repo. Read this first; read `docs/DESIGN.md` before any visual change.
+Guidance for AI agents working in this repo. Read this first; read `docs/DESIGN.md` before any visual change, and `docs/security/03-SECURITY-ARCHITECTURE.md` (the "Rules for anyone changing the site" section) before touching `script.js`, workflows, `404.html` or anything that loads from another origin.
 
 ## What this is
 
@@ -24,7 +24,7 @@ There are no tests or linters. Verification is manual: open every page you touch
 ## Conventions that are easy to break
 
 - **The header, nav and footer are copy-pasted into all five HTML pages.** A change to one must be made in all five. Each page marks its own link with `aria-current="page"`; the 404 page marks none.
-- **Theme:** an inline `<script>` in each `<head>` adds `light` to `<html>` before paint; `script.js` then mirrors it onto `<body>` and wires the toggle. CSS selectors are written as `html.light, body.light`. Keep both selectors, and keep the inline head script (it prevents a flash of the wrong theme). Preference is stored under `localStorage` key `site_theme`, and every storage call is wrapped in try/catch.
+- **Theme:** an inline `<script>` in each `<head>` adds `light` to `<html>` before paint; `script.js` then mirrors it onto `<body>` and wires the toggle. CSS selectors are written as `html.light, body.light`. Keep both selectors, and keep the inline head script (it prevents a flash of the wrong theme). Every page has a Content-Security-Policy meta tag that allows that script by SHA-256 hash: if you change it, run `python3 .github/scripts/check_csp.py` and update the hash on all five pages. Do not add other inline scripts, `style=` attributes or `on*=` handlers; CI rejects them. Preference is stored under `localStorage` key `site_theme`, and every storage call is wrapped in try/catch.
 - **Colors come from CSS variables** in `:root` and the light override block. Do not hard-code hex values in components. Check contrast for **both** themes after any color change.
 - Each content page keeps its own `<title>`, meta description, `canonical`, and Open Graph tags; new content pages need all of them. `404.html` intentionally has no canonical or Open Graph tags.
 - `style.css` is organized in labelled sections; add rules to the matching section rather than the end of the file.

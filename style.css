@@ -595,6 +595,12 @@ html.light .skip-link, body.light .skip-link { color: #ffffff; }
   color: var(--accent);
 }
 
+.headshot-wrap {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+}
+
 /* Headshot: smaller, 4:5 crop that keeps the whole face (top of head to chin) in frame */
 .headshot {
   display: block;

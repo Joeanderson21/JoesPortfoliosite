@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-miswyNFYuOzaNQbb68h2R3oUYMQYJdTWfLBh3JrrD9k='; style-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'none'; connect-src 'none'; font-src 'none'; object-src 'none'; frame-src 'none'" />
   <title>Page not found — Joe Anderson</title>
   <meta name="robots" content="noindex" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1220'/%3E%3Ctext x='32' y='42' font-size='28' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%2322d3ee'%3EJJA%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%230b1220'/%3E%3Ctext%20x='32'%20y='42'%20font-size='28'%20font-family='sans-serif'%20font-weight='700'%20text-anchor='middle'%20fill='%2322d3ee'%3EJJA%3C/text%3E%3C/svg%3E">
   <script>try{var t=localStorage.getItem("site_theme");if(t?t==="light":matchMedia("(prefers-color-scheme: light)").matches)document.documentElement.classList.add("light")}catch(e){}</script>
-  <script>document.write('<base href="'+(location.hostname.slice(-10)===".github.io"?"/"+location.pathname.split("/")[1]+"/":"/")+'">')</script>
+  <!-- This page is served at any missing URL, so relative links need a fixed base. Change to "/" if a custom domain is added. -->
+  <base href="/JoesPortfoliosite/">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -50,6 +52,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

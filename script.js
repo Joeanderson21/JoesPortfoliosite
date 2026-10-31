@@ -39,6 +39,18 @@
     });
   }
 
+  // Footer year.
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Hide the headshot if the image fails to load (works even if it failed before this ran).
+  const headshot = document.querySelector('img.headshot');
+  if (headshot) {
+    const hide = function () { headshot.style.display = 'none'; };
+    headshot.addEventListener('error', hide);
+    if (headshot.complete && headshot.naturalWidth === 0) hide();
+  }
+
   document.querySelectorAll('[data-print]').forEach(function (el) {
     el.addEventListener('click', function () { window.print(); });
   });
